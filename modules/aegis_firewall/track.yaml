@@ -1,2 +1,4 @@
-type: github
-update_from: privshell/aegis-firewall
+id: aegis_firewall
+enable: true
+update_to: https://github.com/privshell/aegis-firewall.git
+source: https://github.com/privshell/aegis-firewall
