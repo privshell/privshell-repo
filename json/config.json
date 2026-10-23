@@ -1,12 +1,7 @@
 {
-  "name": "Template Magisk Modules Repository",
-  "website": null,
-  "support": null,
-  "donate": null,
-  "submission": null,
-  "base_url": "https://example.com/",
-  "description": null,
-  "max_num": 2,
+  "name": "PrivShell Modules Repo",
+  "base_url": "https://privshell.github.io/privshell-repo/",
+  "max_num": 3,
   "enable_log": true,
   "log_dir": "log"
 }
