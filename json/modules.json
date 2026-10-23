@@ -9,7 +9,7 @@
   "description": null,
   "metadata": {
     "version": 1,
-    "timestamp": 1792782768.734475
+    "timestamp": 1792790225.612038
   },
   "modules": [
     {
@@ -33,7 +33,7 @@
         "action": true,
         "webroot": true
       },
-      "stars": 3,
+      "stars": 2,
       "track": {
         "type": "ONLINE_ZIP",
         "added": null,
