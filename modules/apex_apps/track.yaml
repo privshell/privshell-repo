@@ -1,2 +1,4 @@
-type: github
-update_from: privshell/apex-apps
+id: apex_apps
+enable: true
+update_to: https://github.com/privshell/apex-apps.git
+source: https://github.com/privshell/apex-apps
