@@ -1,4 +1,6 @@
-id: apex_apps
 enable: true
-update_to: https://github.com/privshell/apex-apps/releases/download/v1.0.0/apex_apps-100-v1.0.0.zip
+id: apex_apps
+last_update: 1792068445.0
 source: https://github.com/privshell/apex-apps
+update_to: https://github.com/privshell/apex-apps/releases/download/v1.0.0/apex_apps-100-v1.0.0.zip
+versions: 1

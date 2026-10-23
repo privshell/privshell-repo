@@ -1,0 +1,14 @@
+{
+  "id": "aegis_firewall",
+  "timestamp": 1792140541.0,
+  "versions": [
+    {
+      "timestamp": 1792140541.0,
+      "version": "v1.0.0",
+      "versionCode": 100,
+      "zipUrl": "https://privshell.github.io/privshell-repo/modules/aegis_firewall/v1.0.0_100.zip",
+      "changelog": "",
+      "size": 32059
+    }
+  ]
+}

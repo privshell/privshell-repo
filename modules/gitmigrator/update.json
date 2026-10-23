@@ -1,0 +1,14 @@
+{
+  "id": "gitmigrator",
+  "timestamp": 1792727943.0,
+  "versions": [
+    {
+      "timestamp": 1792727943.0,
+      "version": "v1.0.0",
+      "versionCode": 1,
+      "zipUrl": "https://privshell.github.io/privshell-repo/modules/gitmigrator/v1.0.0_1.zip",
+      "changelog": "",
+      "size": 26955
+    }
+  ]
+}
