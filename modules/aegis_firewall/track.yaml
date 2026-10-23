@@ -1,4 +1,4 @@
 id: aegis_firewall
 enable: true
-update_to: https://github.com/privshell/aegis-firewall.git
+update_to: https://github.com/privshell/aegis-firewall/releases/download/v1.0.0/aegis_firewall-100-v1.0.0.zip
 source: https://github.com/privshell/aegis-firewall
