@@ -1,2 +1,4 @@
-type: github
-update_from: privshell/orbit-store
+id: orbit_store
+enable: true
+update_to: https://github.com/privshell/orbit-store.git
+source: https://github.com/privshell/orbit-store
