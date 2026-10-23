@@ -1,4 +1,0 @@
-id: gitmigrator
-enable: true
-update_to: https://github.com/privshell/GitMigrator-KSU/releases/download/v1.0.0/GitMigrator-KSU.zip
-source: https://github.com/privshell/GitMigrator-KSU
