@@ -2,5 +2,5 @@ enable: true
 id: apex_apps
 last_update: 1792068445.0
 source: https://github.com/privshell/apex-apps
-update_to: update_to: https://github.com/privshell/apex-apps/releases/latest/download/apex_apps.zip
+update_to: https://github.com/privshell/apex-apps/releases/download/v1.0.2/apex_apps-102-v1.0.2.zip
 versions: 1
