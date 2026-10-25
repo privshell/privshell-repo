@@ -1,0 +1,76 @@
+name: Bug report
+description: Report a problem with a module or with this repository
+title: "[Bug]: "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to report a bug. Please fill in as much detail as you can.
+  - type: dropdown
+    id: module
+    attributes:
+      label: Module
+      options:
+        - AEGIS // FIREWALL
+        - APEX // APPS
+        - ORBIT // STORE
+        - Git Migrator
+        - Repository index or website
+        - Other
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Module version
+      placeholder: e.g. the version shown in your root manager
+    validations:
+      required: true
+  - type: dropdown
+    id: root
+    attributes:
+      label: Root solution
+      options:
+        - KernelSU
+        - KernelSU Next
+        - APatch
+        - Magisk
+        - Other
+    validations:
+      required: true
+  - type: input
+    id: root-version
+    attributes:
+      label: Root solution version
+    validations:
+      required: true
+  - type: input
+    id: device
+    attributes:
+      label: Device and Android version
+      placeholder: e.g. device model, Android version
+    validations:
+      required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: What happened?
+      description: Describe the problem and what you expected to happen instead.
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      placeholder: |
+        1. Open the module's WebUI
+        2. ...
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: Logs and screenshots
+      description: Paste relevant logs or attach screenshots. Remove any private information first.
+      render: shell

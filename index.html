@@ -1,0 +1,314 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PrivShell Modules Repo</title>
+<meta name="description" content="KernelSU, Magisk and APatch modules by PrivShell: a curated repository of root tools with WebUI support, including a kernel-level firewall, module store, app manager and Git migration utilities.">
+<meta name="theme-color" content="#05060a">
+<link rel="icon" type="image/svg+xml" href="assets/logo.svg">
+<link rel="canonical" href="https://privshell.github.io/privshell-repo/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="PrivShell Modules Repo">
+<meta property="og:title" content="PrivShell Modules Repo">
+<meta property="og:description" content="Root modules with real WebUIs, built, tested and shipped from one place.">
+<meta property="og:url" content="https://privshell.github.io/privshell-repo/">
+<meta property="og:image" content="https://privshell.github.io/privshell-repo/assets/banner.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="PrivShell Modules Repo">
+<meta name="twitter:description" content="Root modules with real WebUIs, built, tested and shipped from one place.">
+<meta name="twitter:image" content="https://privshell.github.io/privshell-repo/assets/banner.png">
+<style>
+  :root {
+    --bg: #05060a;
+    --surface: #0b0e16;
+    --surface-2: #10141f;
+    --line: rgba(255, 255, 255, 0.08);
+    --text: #e8ebf5;
+    --muted: #8b93a7;
+    --faint: #5d667c;
+    --cyan: #22d3ee;
+    --indigo: #8b9cff;
+    --violet: #c084fc;
+    --pink: #f472b6;
+    --green: #34d399;
+    --brand: linear-gradient(135deg, #22d3ee 0%, #8b9cff 55%, #c084fc 100%);
+    --mono: ui-monospace, SFMono-Regular, Menlo, Consolas, "DejaVu Sans Mono", monospace;
+    --sans: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--sans);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    background-image:
+      radial-gradient(60% 40% at 10% 0%, rgba(34, 211, 238, 0.16), transparent 70%),
+      radial-gradient(50% 40% at 100% 100%, rgba(168, 85, 247, 0.16), transparent 70%),
+      linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+    background-size: auto, auto, 40px 40px, 40px 40px;
+    background-attachment: fixed;
+  }
+  a { color: inherit; text-decoration: none; }
+  a:focus-visible, button:focus-visible { outline: 2px solid var(--cyan); outline-offset: 3px; border-radius: 8px; }
+  .wrap { max-width: 1080px; margin: 0 auto; padding: 0 20px; }
+
+  header.top { position: sticky; top: 0; z-index: 10; backdrop-filter: blur(12px); background: rgba(5, 6, 10, 0.72); border-bottom: 1px solid var(--line); }
+  header.top .wrap { display: flex; align-items: center; justify-content: space-between; height: 64px; }
+  .brand { display: flex; align-items: center; gap: 10px; font-weight: 800; letter-spacing: 0.04em; }
+  .brand img { width: 30px; height: 30px; }
+  nav { display: flex; gap: 22px; font-size: 14px; color: var(--muted); }
+  nav a:hover { color: var(--text); }
+
+  .hero { padding: 84px 0 56px; text-align: center; }
+  .hero img.mark { width: 92px; height: 92px; filter: drop-shadow(0 0 28px rgba(34, 211, 238, 0.35)); }
+  h1 { margin: 22px 0 6px; font-size: clamp(44px, 9vw, 92px); line-height: 1; font-weight: 800; letter-spacing: 0.03em; background: linear-gradient(90deg, #ffffff, #b9c4ff); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  .sub { font-family: var(--mono); font-weight: 700; font-size: clamp(14px, 2.6vw, 20px); letter-spacing: 0.5em; color: var(--cyan); margin: 0 0 26px; padding-left: 0.5em; }
+  .lead { max-width: 640px; margin: 0 auto; font-size: clamp(17px, 2.4vw, 21px); color: var(--text); }
+  .lead span { display: block; color: var(--muted); font-size: 0.85em; margin-top: 4px; }
+
+  .chips { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin: 28px 0 0; padding: 0; list-style: none; }
+  .chips li { font-family: var(--mono); font-size: 13px; font-weight: 700; padding: 6px 14px; border-radius: 999px; background: var(--surface); border: 1px solid; color: #cfd5e6; }
+  .chips li:nth-child(1) { border-color: rgba(34, 211, 238, 0.55); }
+  .chips li:nth-child(2) { border-color: rgba(139, 156, 255, 0.55); }
+  .chips li:nth-child(3) { border-color: rgba(192, 132, 252, 0.55); }
+  .chips li:nth-child(4) { border-color: rgba(244, 114, 182, 0.55); }
+  .chips li:nth-child(5) { border-color: rgba(52, 211, 153, 0.55); }
+
+  .repo-box { max-width: 720px; margin: 40px auto 0; background: var(--surface); border: 1px solid var(--line); border-radius: 16px; padding: 14px; text-align: left; }
+  .repo-box .label { font-size: 12px; text-transform: uppercase; letter-spacing: 0.14em; color: var(--muted); margin: 2px 6px 10px; }
+  .repo-row { display: flex; gap: 10px; align-items: stretch; }
+  .repo-row code { flex: 1; min-width: 0; overflow-x: auto; white-space: nowrap; font-family: var(--mono); font-size: 14px; background: #070910; border: 1px solid var(--line); border-radius: 10px; padding: 12px 14px; color: #d6dcff; }
+  button.copy { cursor: pointer; font: inherit; font-weight: 700; font-size: 14px; color: #05060a; background: var(--brand); border: 0; border-radius: 10px; padding: 0 20px; min-width: 96px; }
+  button.copy:hover { filter: brightness(1.1); }
+
+  .cta { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; margin-top: 26px; }
+  .btn { display: inline-flex; align-items: center; justify-content: center; padding: 12px 22px; border-radius: 12px; font-weight: 700; font-size: 15px; border: 1px solid var(--line); background: var(--surface); }
+  .btn:hover { border-color: rgba(255, 255, 255, 0.25); }
+  .btn.primary { background: var(--brand); color: #05060a; border: 0; }
+  .btn.primary:hover { filter: brightness(1.1); }
+
+  section { padding: 56px 0; }
+  .eyebrow { font-family: var(--mono); font-size: 13px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--cyan); margin: 0 0 8px; }
+  h2 { margin: 0 0 12px; font-size: clamp(26px, 4vw, 36px); line-height: 1.15; }
+  .section-lead { color: var(--muted); max-width: 620px; margin: 0 0 32px; }
+
+  .grid { display: grid; gap: 18px; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
+  .card { position: relative; background: var(--surface); border: 1px solid var(--line); border-radius: 18px; padding: 24px 22px 22px; overflow: hidden; display: flex; flex-direction: column; transition: transform 0.2s ease, border-color 0.2s ease; }
+  .card::before { content: ""; position: absolute; left: 0; top: 22px; bottom: 22px; width: 4px; border-radius: 0 3px 3px 0; background: var(--accent); }
+  .card:hover { transform: translateY(-3px); border-color: rgba(255, 255, 255, 0.2); }
+  .card .idx { font-family: var(--mono); font-size: 13px; color: var(--accent); opacity: 0.85; }
+  .card h3 { margin: 6px 0 10px; font-family: var(--mono); font-size: 19px; letter-spacing: 0.01em; }
+  .card p { margin: 0 0 18px; color: var(--muted); font-size: 15px; flex: 1; }
+  .card a.more { font-weight: 700; font-size: 14px; color: var(--accent); }
+  .card a.more:hover { text-decoration: underline; }
+
+  .steps { display: grid; gap: 18px; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); counter-reset: step; }
+  .step { background: var(--surface); border: 1px solid var(--line); border-radius: 18px; padding: 22px; counter-increment: step; }
+  .step::before { content: counter(step); display: inline-flex; width: 34px; height: 34px; align-items: center; justify-content: center; border-radius: 10px; background: var(--brand); color: #05060a; font-weight: 800; margin-bottom: 14px; }
+  .step h3 { margin: 0 0 6px; font-size: 18px; }
+  .step p { margin: 0; color: var(--muted); font-size: 15px; }
+
+  .table-wrap { overflow-x: auto; border: 1px solid var(--line); border-radius: 16px; background: var(--surface); }
+  table { width: 100%; border-collapse: collapse; font-size: 15px; min-width: 520px; }
+  th, td { text-align: left; padding: 14px 18px; border-bottom: 1px solid var(--line); }
+  th { font-size: 12px; text-transform: uppercase; letter-spacing: 0.12em; color: var(--muted); background: var(--surface-2); }
+  tr:last-child td { border-bottom: 0; }
+  td:first-child { font-weight: 700; }
+
+  footer { border-top: 1px solid var(--line); padding: 34px 0 48px; color: var(--muted); font-size: 14px; }
+  footer .wrap { display: flex; flex-wrap: wrap; gap: 14px 28px; align-items: center; justify-content: space-between; }
+  footer .links { display: flex; flex-wrap: wrap; gap: 8px 22px; }
+  footer a:hover { color: var(--text); }
+
+  @media (max-width: 640px) {
+    nav a:not(:last-child) { display: none; }
+    table { min-width: 0; font-size: 14px; }
+    th, td { padding: 12px 12px; }
+    .hero { padding-top: 56px; }
+    .repo-row { flex-direction: column; }
+    button.copy { padding: 12px 20px; }
+    .sub { letter-spacing: 0.3em; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .card { transition: none; }
+  }
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="PrivShell Modules Repo">
+      <img src="assets/logo.svg" alt="">
+      <span>PRIVSHELL</span>
+    </a>
+    <nav aria-label="Primary">
+      <a href="#modules">Modules</a>
+      <a href="#install">Install</a>
+      <a href="#compatibility">Compatibility</a>
+      <a href="https://github.com/privshell/privshell-repo">GitHub</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <div class="wrap">
+    <div class="hero">
+      <img class="mark" src="assets/logo.svg" alt="PrivShell logo">
+      <h1>PRIVSHELL</h1>
+      <p class="sub">MODULES REPO</p>
+      <p class="lead">Root modules with real WebUIs.<span>Built, tested and shipped from one place.</span></p>
+
+      <ul class="chips" aria-label="Supported root solutions">
+        <li>KernelSU</li>
+        <li>KernelSU Next</li>
+        <li>APatch</li>
+        <li>Magisk</li>
+        <li>MMRL</li>
+      </ul>
+
+      <div class="repo-box" id="add">
+        <p class="label">Repository URL</p>
+        <div class="repo-row">
+          <code id="repo-url">https://privshell.github.io/privshell-repo/json/modules.json</code>
+          <button class="copy" id="copy-btn" type="button">Copy</button>
+        </div>
+      </div>
+
+      <div class="cta">
+        <a class="btn primary" href="https://github.com/privshell/privshell-repo/blob/master/docs/INSTALL.md">Install guide</a>
+        <a class="btn" href="https://github.com/privshell/privshell-repo">View on GitHub</a>
+      </div>
+    </div>
+  </div>
+
+  <section id="modules">
+    <div class="wrap">
+      <p class="eyebrow">Modules</p>
+      <h2>Four tools, one repository</h2>
+      <p class="section-lead">Every module ships with a WebUI that opens inside your root manager.</p>
+      <div class="grid">
+        <article class="card" style="--accent: var(--cyan)">
+          <span class="idx">01</span>
+          <h3>AEGIS // FIREWALL</h3>
+          <p>Kernel-level per-app firewall. Rules for Wi-Fi, mobile, VPN, LAN and roaming, per-app host rules, screen-off blocking and live connections.</p>
+          <a class="more" href="https://github.com/privshell/privshell-repo/blob/master/docs/aegis-firewall.md">Read the docs &rarr;</a>
+        </article>
+        <article class="card" style="--accent: var(--indigo)">
+          <span class="idx">02</span>
+          <h3>APEX // APPS</h3>
+          <p>App manager. Review and disable preinstalled apps with snapshot restore, freeze apps, control background permissions, back up app data and tune battery policy.</p>
+          <a class="more" href="https://github.com/privshell/privshell-repo/blob/master/docs/apex-apps.md">Read the docs &rarr;</a>
+        </article>
+        <article class="card" style="--accent: var(--violet)">
+          <span class="idx">03</span>
+          <h3>ORBIT // STORE</h3>
+          <p>In-manager module store. Browse, install and update modules from modules.kernelsu.org with sha256 verification.</p>
+          <a class="more" href="https://github.com/privshell/privshell-repo/blob/master/docs/orbit-store.md">Read the docs &rarr;</a>
+        </article>
+        <article class="card" style="--accent: var(--green)">
+          <span class="idx">04</span>
+          <h3>Git Migrator</h3>
+          <p>AMOLED WebUI to back up GitHub repos, move them with all branches, tags and history, upload folders and fix old-username links. Needs Termux with git and python.</p>
+          <a class="more" href="https://github.com/privshell/privshell-repo/blob/master/docs/git-migrator.md">Read the docs &rarr;</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="install">
+    <div class="wrap">
+      <p class="eyebrow">Install</p>
+      <h2>Up and running in three steps</h2>
+      <p class="section-lead">Add the repository once and every module stays installable and up to date from your module manager.</p>
+      <div class="steps">
+        <div class="step">
+          <h3>Add the repository</h3>
+          <p>Open MMRL or a root manager that supports custom repositories and add the repository URL shown above.</p>
+        </div>
+        <div class="step">
+          <h3>Install a module</h3>
+          <p>Pick a module from the list, read its description and tap install. Reboot when your manager asks you to.</p>
+        </div>
+        <div class="step">
+          <h3>Open the WebUI</h3>
+          <p>Launch the module's WebUI from your root manager and configure it to your liking.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="compatibility">
+    <div class="wrap">
+      <p class="eyebrow">Compatibility</p>
+      <h2>Works with your root solution</h2>
+      <p class="section-lead">Module WebUIs are built in on KernelSU and APatch. On Magisk, open them from a WebUI-capable app such as MMRL.</p>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>Root solution</th><th>Module install</th><th>WebUI</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>KernelSU / KernelSU Next</td><td>Supported</td><td>Built in</td></tr>
+            <tr><td>APatch</td><td>Supported</td><td>Built in</td></tr>
+            <tr><td>Magisk</td><td>Supported</td><td>Through MMRL or a similar app</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>&copy; PrivShell. Index and website under GPL-3.0; modules MIT unless stated otherwise.</span>
+    <div class="links">
+      <a href="https://github.com/privshell/privshell-repo">Repository</a>
+      <a href="https://github.com/privshell/privshell-repo/issues/new/choose">Report an issue</a>
+      <a href="https://github.com/privshell/privshell-repo/blob/master/SECURITY.md">Security</a>
+      <a href="https://github.com/privshell/pulse-battery">PULSE // BATTERY</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  (function () {
+    var btn = document.getElementById('copy-btn');
+    var url = document.getElementById('repo-url');
+    if (!btn || !url) return;
+
+    function fallbackCopy(text) {
+      var area = document.createElement('textarea');
+      area.value = text;
+      area.setAttribute('readonly', '');
+      area.style.position = 'fixed';
+      area.style.opacity = '0';
+      document.body.appendChild(area);
+      area.select();
+      try { document.execCommand('copy'); } catch (e) {}
+      document.body.removeChild(area);
+    }
+
+    btn.addEventListener('click', function () {
+      var text = url.textContent.trim();
+      var done = function () {
+        btn.textContent = 'Copied';
+        setTimeout(function () { btn.textContent = 'Copy'; }, 1800);
+      };
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(done, function () { fallbackCopy(text); done(); });
+      } else {
+        fallbackCopy(text);
+        done();
+      }
+    });
+  })();
+</script>
+</body>
+</html>

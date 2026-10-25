@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Install guide
+    url: https://github.com/privshell/privshell-repo/blob/master/docs/INSTALL.md
+    about: Step-by-step instructions and troubleshooting for adding the repository and installing modules.
+  - name: Report a security vulnerability
+    url: https://github.com/privshell/privshell-repo/security/advisories/new
+    about: Please report security problems privately instead of opening a public issue.

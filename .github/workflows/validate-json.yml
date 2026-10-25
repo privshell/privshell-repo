@@ -1,0 +1,47 @@
+name: Validate JSON
+
+on:
+  push:
+    paths:
+      - "json/**"
+      - ".github/workflows/validate-json.yml"
+  pull_request:
+    paths:
+      - "json/**"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    name: Validate repository index
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Validate JSON files
+        run: |
+          python3 - <<'PY'
+          import json
+          import pathlib
+          import sys
+
+          files = sorted(pathlib.Path("json").rglob("*.json"))
+          if not files:
+              print("No JSON files found in json/")
+              sys.exit(1)
+
+          failed = False
+          for path in files:
+              try:
+                  with path.open(encoding="utf-8") as handle:
+                      json.load(handle)
+                  print(f"OK    {path}")
+              except Exception as error:
+                  failed = True
+                  print(f"ERROR {path}: {error}")
+
+          sys.exit(1 if failed else 0)
+          PY

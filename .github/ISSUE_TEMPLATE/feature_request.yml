@@ -1,0 +1,37 @@
+name: Feature request
+description: Suggest an improvement or a new module
+title: "[Feature]: "
+labels: ["enhancement"]
+body:
+  - type: dropdown
+    id: module
+    attributes:
+      label: Related module
+      options:
+        - AEGIS // FIREWALL
+        - APEX // APPS
+        - ORBIT // STORE
+        - Git Migrator
+        - Repository index or website
+        - New module
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: What problem would this solve?
+      description: Describe the situation where the feature would help you.
+    validations:
+      required: true
+  - type: textarea
+    id: solution
+    attributes:
+      label: Proposed solution
+      description: Describe what you would like to see.
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered
+      description: Any other approaches or workarounds you have tried.
