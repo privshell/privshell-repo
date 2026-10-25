@@ -12,7 +12,6 @@ https://privshell.github.io/privshell-repo/json/modules.json
 ```
 
 Modules
-
 Module	What it does	
 AEGIS // FIREWALL	Kernel-level per-app firewall with WebUI — Wi-Fi, mobile, VPN, LAN and roaming rules, per-app host rules, screen-off blocking, live connections.	
 APEX // APPS	App manager with WebUI — review and disable preinstalled apps with snapshot restore, freeze apps, control background permissions, back up app data, tune battery policy.	
@@ -20,10 +19,8 @@ ORBIT // STORE	In-manager module store — browse, install and update modules fr
 Git Migrator	AMOLED WebUI to back up GitHub repos, move them (all branches/tags/history) to a new account, upload folders and fix old-username links. Needs Termux (git + python).	
 
 Links
-
-- Source and issues: [github.com/privshell-repo](https://github.com/privshell/privshell-repo)
-- More projects: [PULSE // BATTERY](https://github.com/privshell?tab=repositories)
+-Source and issues: [github.com/privshell-repo](https://github.com/privshell/privshell-repo)
+- More projects: [privshell](https://github.com/privshell?tab=repositories)
 
 License
-
 Modules are MIT licensed unless stated otherwise in their own repositories.
