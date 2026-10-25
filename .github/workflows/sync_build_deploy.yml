@@ -9,7 +9,7 @@ on:
         description: "Run Sync"
         type: choice
         required: true
-        default: 'No'
+        default: 'Yes'
         options:
          - 'Yes'
          - 'No'
