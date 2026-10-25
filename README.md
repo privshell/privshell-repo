@@ -21,7 +21,7 @@ Git Migrator	AMOLED WebUI to back up GitHub repos, move them (all branches/tags/
 
 Links
 
-- Source and issues: [github.com/privshell](https://github.com/privshell)
+- Source and issues: [github.com/privshell-repo](https://github.com/privshell/privshell-repo)
 - More projects: [PULSE // BATTERY](https://github.com/privshell?tab=repositories)
 
 License
