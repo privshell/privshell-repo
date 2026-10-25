@@ -9,7 +9,7 @@
   "description": null,
   "metadata": {
     "version": 1,
-    "timestamp": 1792927957.443404
+    "timestamp": 1792929381.584
   },
   "modules": [
     {
@@ -49,6 +49,54 @@
           "zipUrl": "https://privshell.github.io/privshell-repo/modules/aegis_firewall/v1.0.0_100.zip",
           "changelog": "",
           "size": 32059
+        }
+      ]
+    },
+    {
+      "id": "apex_apps",
+      "name": "APEX // APPS",
+      "version": "v1.0.2",
+      "versionCode": 102,
+      "author": "privshell",
+      "description": "App manager with WebUI. Review and disable preinstalled apps with snapshot restore, freeze apps, control background permissions, back up app data, and tune battery policy per app.",
+      "verified": false,
+      "added": 0,
+      "timestamp": 1792929007.0,
+      "size": 29009,
+      "permissions": [
+        "magisk.permission.SERVICE",
+        "magisk.permission.ACTION",
+        "kernelsu.permission.WEBUI"
+      ],
+      "features": {
+        "service": true,
+        "action": true,
+        "webroot": true
+      },
+      "stars": 1,
+      "track": {
+        "type": "ONLINE_ZIP",
+        "added": null,
+        "source": "https://github.com/privshell/apex-apps",
+        "antifeatures": null,
+        "build_metadata": "https://privshell.github.io/privshell-repo/modules/apex_apps/track.yaml"
+      },
+      "versions": [
+        {
+          "timestamp": 1792068445.0,
+          "version": "v1.0.0",
+          "versionCode": 100,
+          "zipUrl": "https://privshell.github.io/privshell-repo/modules/apex_apps/v1.0.0_100.zip",
+          "changelog": "",
+          "size": 29035
+        },
+        {
+          "timestamp": 1792929007.0,
+          "version": "v1.0.2",
+          "versionCode": 102,
+          "zipUrl": "https://privshell.github.io/privshell-repo/modules/apex_apps/v1.0.2_102.zip",
+          "changelog": "",
+          "size": 29009
         }
       ]
     },

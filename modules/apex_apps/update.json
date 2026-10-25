@@ -9,6 +9,14 @@
       "zipUrl": "https://privshell.github.io/privshell-repo/modules/apex_apps/v1.0.0_100.zip",
       "changelog": "",
       "size": 29035
+    },
+    {
+      "timestamp": 1792929007.0,
+      "version": "v1.0.2",
+      "versionCode": 102,
+      "zipUrl": "https://privshell.github.io/privshell-repo/modules/apex_apps/v1.0.2_102.zip",
+      "changelog": "",
+      "size": 29009
     }
   ]
 }
