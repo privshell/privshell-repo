@@ -2,5 +2,5 @@ enable: true
 id: aegis_firewall
 last_update: 1792140541.0
 source: https://github.com/privshell/aegis-firewall
-update_to: https://github.com/privshell/aegis-firewall/releases/download/v1.0.0/aegis_firewall-100-v1.0.0.zip
+update_to: https://github.com/privshell/aegis-firewall/releases/latest/download/aegis_firewall.zip
 versions: 1
