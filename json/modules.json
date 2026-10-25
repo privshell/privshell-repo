@@ -9,7 +9,7 @@
   "description": null,
   "metadata": {
     "version": 1,
-    "timestamp": 1792926531.018549
+    "timestamp": 1792927957.443404
   },
   "modules": [
     {
@@ -53,46 +53,6 @@
       ]
     },
     {
-      "id": "apex_apps",
-      "name": "APEX // APPS",
-      "version": "v1.0.0",
-      "versionCode": 100,
-      "author": "kreza6173-pixel",
-      "description": "App manager with WebUI. Review and disable preinstalled apps with snapshot restore, freeze apps, control background permissions, back up app data, and tune battery policy per app.",
-      "verified": false,
-      "added": 0,
-      "timestamp": 1792068445.0,
-      "size": 29035,
-      "permissions": [
-        "magisk.permission.SERVICE",
-        "magisk.permission.ACTION",
-        "kernelsu.permission.WEBUI"
-      ],
-      "features": {
-        "service": true,
-        "action": true,
-        "webroot": true
-      },
-      "stars": 1,
-      "track": {
-        "type": "ONLINE_ZIP",
-        "added": null,
-        "source": "https://github.com/privshell/apex-apps",
-        "antifeatures": null,
-        "build_metadata": "https://privshell.github.io/privshell-repo/modules/apex_apps/track.yaml"
-      },
-      "versions": [
-        {
-          "timestamp": 1792068445.0,
-          "version": "v1.0.0",
-          "versionCode": 100,
-          "zipUrl": "https://privshell.github.io/privshell-repo/modules/apex_apps/v1.0.0_100.zip",
-          "changelog": "",
-          "size": 29035
-        }
-      ]
-    },
-    {
       "id": "gitmigrator",
       "name": "Git Migrator",
       "version": "v1.0.0",
@@ -125,44 +85,6 @@
           "zipUrl": "https://privshell.github.io/privshell-repo/modules/gitmigrator/v1.0.0_1.zip",
           "changelog": "",
           "size": 26955
-        }
-      ]
-    },
-    {
-      "id": "orbit_store",
-      "name": "ORBIT // STORE",
-      "version": "v1.0.0",
-      "versionCode": 100,
-      "author": "kreza6173-pixel",
-      "description": "In-manager module store for KernelSU Modules. Browse, install and update modules from modules.kernelsu.org with sha256 verification, right inside your root manager WebUI.",
-      "verified": false,
-      "added": 0,
-      "timestamp": 1792605674.0,
-      "size": 17770,
-      "permissions": [
-        "magisk.permission.ACTION",
-        "kernelsu.permission.WEBUI"
-      ],
-      "features": {
-        "action": true,
-        "webroot": true
-      },
-      "stars": 0,
-      "track": {
-        "type": "ONLINE_ZIP",
-        "added": null,
-        "source": "https://github.com/privshell/orbit-store",
-        "antifeatures": null,
-        "build_metadata": "https://privshell.github.io/privshell-repo/modules/orbit_store/track.yaml"
-      },
-      "versions": [
-        {
-          "timestamp": 1792605674.0,
-          "version": "v1.0.0",
-          "versionCode": 100,
-          "zipUrl": "https://privshell.github.io/privshell-repo/modules/orbit_store/v1.0.0_100.zip",
-          "changelog": "",
-          "size": 17770
         }
       ]
     }
