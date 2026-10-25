@@ -1,52 +1,29 @@
-# Template Magisk Modules Repository
+PrivShell Modules Repo
 
-> [!IMPORTANT]
-> Do not fork this repository if you want to create your own Magisk Modules Repository, use the **Use this template** button instead
+Root modules with real WebUIs — built, tested and shipped from one place.
+Browse and install everything below straight from MMRL (Magisk Module Repo Loader) or your root manager of choice.
 
-A template repository to generate your own Magisk Modules Repository
+Add this repository
 
-## Directory and File Overview:
+In MMRL (or KernelSU / KernelSU Next / APatch / Magisk module page):
 
-1. **Root Level**
+```
+https://privshell.github.io/privshell-repo/json/modules.json
+```
 
-   - The root contains the main folders (`assets`, `json`, `log`, and `modules`) and serves as the entry point for the repository.
+Modules
 
-2. **`assets/`**
+Module	What it does	
+AEGIS // FIREWALL	Kernel-level per-app firewall with WebUI — Wi-Fi, mobile, VPN, LAN and roaming rules, per-app host rules, screen-off blocking, live connections.	
+APEX // APPS	App manager with WebUI — review and disable preinstalled apps with snapshot restore, freeze apps, control background permissions, back up app data, tune battery policy.	
+ORBIT // STORE	In-manager module store — browse, install and update modules from modules.kernelsu.org with sha256 verification, inside your root manager WebUI.	
+Git Migrator	AMOLED WebUI to back up GitHub repos, move them (all branches/tags/history) to a new account, upload folders and fix old-username links. Needs Termux (git + python).	
 
-   - Contains media assets related to the repository.
-   - `cover.webp`: Likely an image used as a cover or thumbnail. This cover image should be always `*.webp` with a size of **1024x500**.
+Links
 
-3. **`json/`**
+- Source and issues: [github.com/privshell](https://github.com/privshell)
+- More projects: [PULSE // BATTERY](https://github.com/privshell/pulse-battery)
 
-   - Houses configuration and module metadata in JSON format.
-   - `config.json`: Probably holds repository-wide settings.
-   - `modules.json`: Likely a listing or metadata for all modules in the repository.
+License
 
-4. **`log/`**
-
-   - Stores logs for repository operations or updates.
-   - `sync_2025-01-04.log`: A log file for synchronization activities, possibly capturing recent updates or actions.
-
-5. **`modules/`**
-
-   - Main directory for individual Magisk modules.
-   - Each module is organized in its own subfolder.
-
-6. **`modules/bindhosts/`**
-
-   - A specific module (e.g., "bindhosts") with the following files:
-     - `track.yaml`: Likely tracks updates or version history.
-     - `update.json`: Contains update details or changelogs.
-     - `v1.8.5_185.md`: Documentation or release notes for version `v1.8.5_185`.
-     - `v1.8.5_185.zip`: The module's distributable ZIP file for version `v1.8.5_185`.
-
-7. **`modules/mmrl_wpd/`**
-   - Another module ("mmrl_wpd") with similar structure:
-     - `4.7.7_459.zip`: Distributable ZIP file for version `4.7.7_459`.
-     - `track.yaml`: Tracks updates or history.
-     - `update.json`: Contains update metadata.
-
-
-## More
-
-Learn more at the [Googlers-Repo/magisk-modules-repo-util](https://github.com/Googlers-Repo/magisk-modules-repo-util) repository.
+Modules are MIT licensed unless stated otherwise in their own repositories.
