@@ -2,5 +2,5 @@ enable: true
 id: gitmigrator
 last_update: 1792727943.0
 source: https://github.com/privshell/GitMigrator-KSU
-update_to: https://github.com/privshell/GitMigrator-KSU/releases/download/v1.0.0/GitMigrator-KSU.zip
+update_to: https://github.com/privshell/GitMigrator-KSU/releases/latest/download/GitMigrator-KSU.zip
 versions: 1
