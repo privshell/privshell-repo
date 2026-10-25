@@ -5,11 +5,11 @@
   "support": null,
   "donate": null,
   "submission": null,
-  "cover": "https://privshell.github.io/privshell-repo/assets/cover.webp",
+  "cover": null,
   "description": null,
   "metadata": {
     "version": 1,
-    "timestamp": 1792901893.6431
+    "timestamp": 1792926531.018549
   },
   "modules": [
     {
