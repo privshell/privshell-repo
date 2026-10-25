@@ -69,7 +69,7 @@ Details and troubleshooting tips are in the [install guide](docs/INSTALL.md).
 ## Links
 
 - Source and issues: [github.com/privshell](https://github.com/privshell)
-- More projects: [PULSE // BATTERY](https://github.com/privshell/pulse-battery)
+- More projects: [privshell-repo](https://github.com/privshell/privshell-repo)
 
 ## License
 
