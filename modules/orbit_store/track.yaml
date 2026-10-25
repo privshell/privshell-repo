@@ -2,5 +2,5 @@ enable: true
 id: orbit_store
 last_update: 1792605674.0
 source: https://github.com/privshell/orbit-store
-update_to: https://github.com/privshell/orbit-store/releases/download/v1.0.0/orbit_store-100-v1.0.0.zip
+update_to: update_to: https://github.com/privshell/orbit-store/releases/latest/download/orbit_store.zip
 versions: 1
